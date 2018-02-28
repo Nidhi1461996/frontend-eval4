@@ -44,6 +44,7 @@ class LeaderBoard extends Component {
     );
   }
 }
+
 const mapStatesToProps = state => ({
   score: state.score,
   name: state.name,

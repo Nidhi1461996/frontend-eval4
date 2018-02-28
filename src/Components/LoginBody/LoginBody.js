@@ -29,6 +29,9 @@ class LoginBody extends Component {
     this.props.questions(this.state.questions);
     axios.get(`/user/insert/${this.state.name}`).then((response) => {
       console.log(response.data);
+      if (response.data === 'exists') {
+        alert('exisitng user');
+      }
     });
     this.props.dispatchUserName(this.state.name);
     this.props.dispatchPageId(2);
