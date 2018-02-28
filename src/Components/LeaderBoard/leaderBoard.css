@@ -15,3 +15,8 @@
     font-weight: bold;
     display: inline-block;
 }
+.highlight{
+    font-weight: bold;
+    display: inline-block;
+    color:yellow;
+}

@@ -5,6 +5,7 @@ import './leaderBoard.css';
 class LeaderBoard extends Component {
   state = {
     toppers: [],
+    class: 'topper',
   }
   componentDidMount() {
     fetch(`/user/${this.props.name}/toppers`)
@@ -19,18 +20,23 @@ class LeaderBoard extends Component {
   render() {
     const leaders = this.state.toppers
       .map((topper, index) => {
-        console.log(topper.userName);
+        console.log(this.props.name);
+        // if (topper.userName === this.props.name) {
+        //   this.setState({
+        //     class: 'highlight',
+        //   });
+        // }
         return (
           <div className="topper-names">
-            <div className="topper">{index}.{topper.userName}</div>
+            <div className={this.state.class}>{index + 1}.{topper.userName}</div>
             <div className="topper-score">{topper.score}</div>
           </div>
         );
       });
     return (
       <div>
-        <p>your score</p>
-        <p>{this.props.score}</p>
+        <p className="score">Your score</p>
+        <p className="score">{this.props.score}</p>
         <div>
           {leaders}
         </div>

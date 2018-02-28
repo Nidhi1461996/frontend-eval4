@@ -51,7 +51,7 @@ class LoginBody extends Component {
             <br />
             <input type="text" onChange={this.handleChange} />
             <br />
-            <button onClick={this.setUserName}>login</button>
+            <button className="login-login" onClick={this.setUserName}>login</button>
           </div>
         </div>
       </div >

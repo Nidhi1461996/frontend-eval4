@@ -6,6 +6,7 @@ import './question.css';
 class Question extends Component {
   state = {
     score: 0,
+    currentAns: {},
   }
   selectedOption = (event) => {
     if (this.props.answer === event.target.value) {
@@ -17,6 +18,14 @@ class Question extends Component {
     } else {
       console.log(this.props.answer, event.target.value, this.state.score);
     }
+    const ans = {
+      qid: this.props.qid,
+      answer: event.target.value,
+    };
+    this.props.setMarkedAns(ans);
+    this.setState({
+      currentAns: ans,
+    });
   };
   render() {
     const optionElements = Object.entries(this.props.options);
