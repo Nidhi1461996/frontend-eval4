@@ -21,7 +21,7 @@ class Question extends Component {
   render() {
     const optionElements = Object.entries(this.props.options);
     const optElements = optionElements
-      .map((option, index) => <div key={index}><input name={Date.now()} onChange={e => this.selectedOption(e)} type="radio" value={option[1]} />{option[1]}</div>);
+      .map((option, index) => <div key={index}><input name={this.props.qid} onChange={e => this.selectedOption(e)} type="radio" value={option[1]} />{option[1]}</div>);
     return (
 
       <div className="container" >

@@ -7,7 +7,7 @@ import './quizBody.css';
 class QuizBody extends Component {
   state = {
     score: 0,
-    disabled: true,
+    disabled: false,
   }
   setScore = () => {
     this.setState({
@@ -21,9 +21,10 @@ class QuizBody extends Component {
   }
   displayScore = () => {
     fetch(`/user/insert/${this.props.name}/${this.state.score}`).then(() => {
-      this.props.dispatchScore(this.state.score);
-      this.props.dispatchPageId(3);
+
     });
+    this.props.dispatchScore(this.state.score);
+    this.props.dispatchPageId(3);
   }
   render() {
     const questionElements = this.props.questions
@@ -31,7 +32,7 @@ class QuizBody extends Component {
         console.log(ques.question);
         return (<Question
           num={index}
-          key={ques.id}
+          qid={ques.id}
           quest={ques.question}
           options={ques.options}
           answer={ques.answer}

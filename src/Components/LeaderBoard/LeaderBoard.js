@@ -22,7 +22,7 @@ class LeaderBoard extends Component {
         console.log(topper.userName);
         return (
           <div className="topper-names">
-            <div>{index}.{topper.userName}</div>
+            <div className="topper">{index}.{topper.userName}</div>
             <div className="topper-score">{topper.score}</div>
           </div>
         );

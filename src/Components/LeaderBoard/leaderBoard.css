@@ -5,3 +5,13 @@
     margin:5px;
     border:1px solid black;
 }
+.topper-score{
+    position: absolute;
+    right:5px;
+    display: inline-block;
+    color:white;
+}
+.topper{
+    font-weight: bold;
+    display: inline-block;
+}
