@@ -1,0 +1,9 @@
+.Quiz-body-container{
+    overflow: scroll;
+}
+.calculate{
+padding:15px;
+background-color: white;
+border: 1px solid black;
+color:black;
+}
